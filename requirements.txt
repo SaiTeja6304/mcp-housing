@@ -1,0 +1,11 @@
+mcp
+python-dotenv
+httpx
+beautifulsoup4
+requests
+langchain
+langchain-google-genai
+fastapi
+uvicorn
+pydantic
+langchain-core

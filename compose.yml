@@ -1,0 +1,23 @@
+services:
+  mcp-server:
+    image: ssunku6/claude-mcp-server:latest
+    container_name: claude-mcp-server
+    build:
+      context: .
+      dockerfile: mcp-server/Dockerfile
+    networks:
+      - claude-mcp-net
+    restart: unless-stopped
+  mcp-client:
+    image: ssunku6/claude-mcp-client:latest
+    container_name: claude-mcp-client
+    build:
+      context: .
+      dockerfile: mcp-client/Dockerfile
+    networks:
+      - claude-mcp-net
+    restart: unless-stopped
+
+networks:
+  claude-mcp-net:
+    driver: bridge
